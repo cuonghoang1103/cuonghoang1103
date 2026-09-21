@@ -1,6 +1,6 @@
 ## Hi, I'm Cường 👋
 
-Final-year Software Engineering student in Hanoi. I build and operate
+Software Engineering student at FPT University, Hanoi. I build and operate
 **[cuongthai.com](https://cuongthai.com)** — a bilingual (VI/EN) learning
 platform: courses, an AI tutor, a code lab, an exam room, and companion
 iOS + desktop apps.
@@ -8,24 +8,29 @@ iOS + desktop apps.
 It isn't a tutorial project. It runs in production on a VPS I administer
 myself, and I'm the one who has to fix it when it breaks at 2am.
 
+**How I build:** I design the system and break the work into tasks, an AI
+coding agent (Claude Code) writes much of the code, and I review it, test the
+real behaviour, deploy it and keep it running.
+
 ---
 
 ### What that actually involves
 
 | | |
 |---|---|
-| **Backend** | Node.js · Express · TypeScript · PostgreSQL + Prisma · **319 tables**, 150 migrations |
+| **Backend** | Node.js · Express · TypeScript · PostgreSQL + Prisma · **319 tables**, 150 migrations · Redis · Socket.IO |
 | **Web** | Next.js (App Router) · React · Tailwind |
-| **Mobile** | iOS — SwiftUI, 111k lines, shipped to TestFlight |
-| **Desktop** | Electron, auto-update via GitHub Releases |
-| **Infra** | Docker · GHCR · nginx · self-hosted VPS · deploy script with smoke tests and automatic rollback |
-| **AI** | Multi-provider LLM gateway with per-feature model routing, response caching, and hard daily spend caps |
+| **Mobile** | iOS — SwiftUI, shipped to TestFlight |
+| **Desktop** | Electron — [130+ releases](https://github.com/cuonghoang1103/cuongthai-desktop/releases) for macOS, Windows and Linux, delivered by auto-update |
+| **Infra** | Docker · GHCR · nginx · self-administered VPS · images built on a home server, post-deploy smoke tests, nginx config verified from inside the container and reverted automatically on failure |
+| **AI** | One gateway over several LLM providers with per-feature model routing, per-user token quotas and daily spend limits · a self-hosted Qwen model on a home GPU behind a priority queue |
 
-**Scale of the running system:** 592 published courses · 12,100 lessons ·
-1,058 videos with bilingual subtitles (330,936 aligned sentences, 4.8M words).
+**Scale of the running system:** 4,300+ commits since June 2026 · 592
+published courses · 12,100 lessons · 1,058 videos with bilingual subtitles
+(330,936 aligned sentences, 4.8M words).
 
-**Honest note:** this is a personal platform, not a startup — the user base is
-small. What I'm showing is the engineering, not traction.
+**Honest note:** this is a personal platform, not a startup — about 70 users.
+What I'm showing is the engineering, not traction.
 
 ---
 
@@ -124,18 +129,21 @@ table `next build` prints.
 | | |
 |---|---|
 | **[api-backend](https://github.com/cuonghoang1103/api-backend)** | The platform monorepo — backend, web, desktop, infra, deploy tooling |
-| **[cuongthai-desktop](https://github.com/cuonghoang1103/cuongthai-desktop)** | Electron desktop release channel with auto-update |
-| **[Lab211_For_CuongHoang](https://github.com/cuonghoang1103/Lab211_For_CuongHoang)** | Java OOP lab solutions (54/54) |
-| **[Homestay-Booking-API](https://github.com/cuonghoang1103/Homestay-Booking-API)** | TypeScript REST API |
+| **[cuongthai-desktop](https://github.com/cuonghoang1103/cuongthai-desktop)** | Release channel for the Electron app — installers and the auto-update feed |
+| **[CuongHoangDev-V2](https://github.com/cuonghoang1103/CuongHoangDev-V2)** | The project before cuongthai.com: Spring Boot 3 + Flyway API, TypeScript/React front end, 287 commits in 12 days · [live demo](https://cuong-hoang-dev-v2.vercel.app) |
+| **[Library-Management-System](https://github.com/cuonghoang1103/Library-Management-System)** | Spring Boot 3.4 (Java 21) + React — "one open loan per copy" enforced by a PostgreSQL partial unique index |
+| **[Homestay-Booking-API](https://github.com/cuonghoang1103/Homestay-Booking-API)** | TypeScript REST API practice project with a Vitest test suite |
+| **[Restaurant-Reservation-App](https://github.com/cuonghoang1103/Restaurant-Reservation-App)** | Flutter client over a Node/Express + PostgreSQL API — table booking with `SKIP LOCKED` |
 
 ---
 
 ### Currently learning
 
-**Java + Spring Boot** — the dominant enterprise backend stack in Vietnam, and
-the natural next step from the Node/TypeScript services I've been writing.
+**Java + Spring Boot** — the dominant enterprise backend stack in Vietnam — and
+deepening my JavaScript/React fundamentals by writing more of it by hand.
 
 ### Reach me
 
 - 🌐 [cuongthai.com](https://cuongthai.com)
-- 📍 Hanoi, Vietnam · open to internships and junior backend / full-stack roles
+- 📍 Hanoi, Vietnam (GMT+7) · open to internships, part-time roles and small
+  freelance projects — deploying and fixing Next.js / Node.js apps
