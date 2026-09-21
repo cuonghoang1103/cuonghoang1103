@@ -20,7 +20,7 @@ real behaviour, deploy it and keep it running.
 |---|---|
 | **Backend** | Node.js · Express · TypeScript · PostgreSQL + Prisma · **319 tables**, 150 migrations · Redis · Socket.IO |
 | **Web** | Next.js (App Router) · React · Tailwind |
-| **Mobile** | iOS — SwiftUI, shipped to TestFlight |
+| **Mobile** | iOS + iPadOS — SwiftUI, ~111k lines, shipped to TestFlight ([source](https://github.com/cuonghoang1103/cuongthai-ios)) |
 | **Desktop** | Electron — [130+ releases](https://github.com/cuonghoang1103/cuongthai-desktop/releases) for macOS, Windows and Linux, delivered by auto-update |
 | **Infra** | Docker · GHCR · nginx · self-administered VPS · images built on a home server, post-deploy smoke tests, nginx config verified from inside the container and reverted automatically on failure |
 | **AI** | One gateway over several LLM providers with per-feature model routing, per-user token quotas and daily spend limits · a self-hosted Qwen model on a home GPU behind a priority queue |
@@ -129,6 +129,7 @@ table `next build` prints.
 | | |
 |---|---|
 | **[api-backend](https://github.com/cuonghoang1103/api-backend)** | The platform monorepo — backend, web, desktop, infra, deploy tooling |
+| **[cuongthai-ios](https://github.com/cuonghoang1103/cuongthai-ios)** | The native SwiftUI app for iPhone and iPad — PencilKit notebook, 3D workshop with AR, WebRTC calls, widgets |
 | **[cuongthai-desktop](https://github.com/cuonghoang1103/cuongthai-desktop)** | Release channel for the Electron app — installers and the auto-update feed |
 | **[CuongHoangDev-V2](https://github.com/cuonghoang1103/CuongHoangDev-V2)** | The project before cuongthai.com: Spring Boot 3 + Flyway API, TypeScript/React front end, 287 commits in 12 days · [live demo](https://cuong-hoang-dev-v2.vercel.app) |
 | **[Library-Management-System](https://github.com/cuonghoang1103/Library-Management-System)** | Spring Boot 3.4 (Java 21) + React — "one open loan per copy" enforced by a PostgreSQL partial unique index |
